@@ -38,7 +38,7 @@
                 "Alle Zutaten in einer großen Schüssel mit Caesar Dressing vermischen.",
                 "Mit frisch geriebenem Parmesan bestreuen."
             ],
-            "image": "https://example.com/images/caesar-salad.jpg"
+            "image": "https://www.thespruceeats.com/thmb/8jYvph2FZVQNEwil-djzSD_0jNo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/caesar-salad-recipe-256363-3e0462e398f44032bb7b93abc1ea8b31.jpg"
         },
         {
             "id": 3,
@@ -78,7 +78,7 @@
                 "Paprikapulver, Tomaten und Brühe hinzufügen, zum Kochen bringen und auf niedriger Hitze 2 Stunden köcheln lassen.",
                 "Mit Salz und Pfeffer abschmecken und servieren."
             ],
-            "image": "https://example.com/images/rindergulasch.jpg"
+            "image": "https://emmikochteinfach.de/wp-content/uploads/2022/02/seo_Gulasch-Nah-200.jpg"
         },
         {
             "id": 8,
@@ -98,7 +98,7 @@
                 "Linsen, Kreuzkümmel und Gemüsebrühe hinzufügen, zum Kochen bringen und bei mittlerer Hitze 20 Minuten köcheln lassen.",
                 "Mit einem Pürierstab leicht pürieren, mit Salz und Pfeffer abschmecken und servieren."
             ],
-            "image": "https://example.com/images/linsensuppe.jpg"
+            "image": "https://eat.de/wp-content/uploads/2021/07/Vegane-Linsensuppe-6680-800x533.jpg"
         },
         {
             "id": 9,
@@ -118,7 +118,7 @@
                 "Teig in eine gefettete Kuchenform geben, Äpfel darauflegen und mit Zimt bestreuen.",
                 "Bei 180°C 45 Minuten backen."
             ],
-            "image": "https://example.com/images/apfelkuchen.jpg"
+            "image": "https://th.bing.com/th/id/OIP.ZLbCBLD5ndbg0u1aD3D4BwHaFj?rs=1&pid=ImgDetMain"
         },
         {
             "id": 10,
@@ -139,7 +139,7 @@
                 "Gekochte Spaghetti und Basilikum unter die Tomatensauce mischen.",
                 "Mit Salz und Pfeffer abschmecken und servieren."
             ],
-            "image": "https://example.com/images/tomaten-spaghetti.jpg"
+            "image": "https://www.kjero.com/app/uploads/sites/56/2017/06/IMG_20170620_150509_892.jpg"
         },
         {
             "id": 11,
@@ -162,7 +162,7 @@
                 "Gekochten Reis und Tomatensauce unterrühren, mit Salz und Pfeffer würzen.",
                 "Die Mischung in die Paprika füllen, mit Käse bestreuen und bei 180°C 30 Minuten backen."
             ],
-            "image": "https://example.com/images/gefuellte-paprika.jpg"
+            "image": "https://img.veglife.de/2015/07/gefuellte-paprika.jpg"
         },
         {
             "id": 12,
@@ -181,7 +181,7 @@
                 "Mehl sieben und unterheben.",
                 "In eine gefettete Backform füllen und bei 175°C 40 Minuten backen."
             ],
-            "image": "https://example.com/images/schokoladenkuchen.jpg"
+            "image": "https://img.chefkoch-cdn.de/rezepte/1682801276507063/bilder/1284540/crop-960x720/lieblings-schokoladenkuchen.jpg"
         },
         {
             "id": 13,
@@ -204,7 +204,7 @@
                 "Suppe pürieren, Sahne einrühren und mit Salz und Pfeffer abschmecken.",
                 "Mit gerösteten Kürbiskernen servieren."
             ],
-            "image": "https://example.com/images/kuerbissuppe.jpg"
+            "image": "https://image.brigitte.de/11625334/t/OI/v3/w960/r1/-/einfache-kuerbissuppe-bild.jpg"
         }
     ]
 }

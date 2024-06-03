@@ -17,7 +17,7 @@ const RecipeDetailPage = () => {
   return (
     <div>
       <h1 className="text-2xl font-bold">{recipe.name}</h1>
-      <img src={recipe.image} alt={recipe.name} className="w-full h-64 object-cover mt-4" />
+      <img src={recipe.image} alt={recipe.name} className="w-full h-64 object-cover mt-4" style={{ maxWidth: '200px' }} />
       <h2 className="text-xl font-bold mt-4">Zutaten</h2>
       <ul className="list-disc list-inside">
         {recipe.ingredients.map((ingredient, index) => (

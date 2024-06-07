@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ci-example
+        working-directory: react-recipe-app
     steps:
       - name: Setup LTS Version of NodeJS
         uses: actions/setup-node@v4

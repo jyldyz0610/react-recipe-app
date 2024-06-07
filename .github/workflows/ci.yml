@@ -1,31 +1,54 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  Explore-GitHub-Actions:
+  build_and_deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: react-recipe-app
+
     steps:
-      - name: Setup LTS Version of NodeJS
-        uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Backend Build and Deploy Steps
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build Backend Docker image
+        run: |
+          docker build -t jyldyz0610/backend-image .
+
+      - name: Log in to Docker Hub for Backend
+        run: |
+          echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login --username jyldyz0610 --password-stdin
+
+      - name: Tag Backend Docker image
+        run: |
+          docker tag jyldyz0610/backend-image:latest jyldyz0610/backend-image:latest
+
+      - name: Push Backend Docker image to Docker Hub
+        run: |
+          docker push jyldyz0610/backend-image:latest
+
+      - name: SSH into EC2 instance and deploy Backend
+        run: |
+          ssh -i ${{ secrets.SSH_KEY_PATH }} ubuntu@${{ secrets.EC2_PUBLIC_DNS }} "docker pull jyldyz0610/backend-image:latest && docker run -d -p 3000:3000 jyldyz0610/backend-image:latest"
+
+      
+      - name: Install Node.js and NPM
+        uses: actions/setup-node@v2
         with:
-          node-version: 20.11.0
-      - name: Check out repository code
-        uses: actions/checkout@v4
-      - name: Install all Dependencies
-        run: npm ci
-      - name: Run Unit Tests
-        run: npm run test
-      - name: Build App
-        run: npm run build
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
-          aws-region: ${{ secrets.AWS_REGION }}
-      - name: AWS Demo Access
-        run: aws s3 sync build  s3://cicdbucketzh
+          node-version: '20'
+
+      - name: Install frontend dependencies and build
+        run: |
+          cd frontend-directory
+          npm install
+          npm run build
+
+      - name: Deploy Frontend to EC2 instance
+        run: |
+          scp -r -i ${{ secrets.SSH_KEY_PATH }} frontend-directory/build/* ubuntu@${{ secrets.EC2_PUBLIC_DNS }}:/var/www/html/

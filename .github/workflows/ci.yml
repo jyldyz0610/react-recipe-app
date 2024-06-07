@@ -17,9 +17,10 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
+      # Frontend Build and Deploy Steps
       - name: Build Frontend Docker image
         run: |
-          docker build -t my-frontend-image frontend-directory
+          docker build -t my-frontend-image .
 
       - name: Log in to Docker Hub for Frontend
         run: |
@@ -55,10 +56,9 @@ jobs:
 
       - name: Install frontend dependencies and build
         run: |
-          cd frontend-directory
           npm install
           npm run build
 
       - name: Deploy Frontend to EC2 instance
         run: |
-          scp -r -i ${{ secrets.SSH_KEY_PATH }} frontend-directory/build/* ubuntu@${{ secrets.EC2_PUBLIC_DNS }}:/var/www/html/
+          scp -r -i ${{ secrets.SSH_KEY_PATH }} build/* ubuntu@${{ secrets.EC2_PUBLIC_DNS }}:/var/www/html/
